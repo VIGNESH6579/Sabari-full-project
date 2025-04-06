@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Login | MediCare</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="assets/logo.png" alt="Hospital Logo">
+            <h1>MediCare Hospital</h1>
+        </a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="patient-login.html">Patient Portal</a></li>
+            <li><a href="doctor-login.html" class="active">Doctor Portal</a></li>
+            <li><a href="admin-login.html">Admin Portal</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="auth-container">
+    <div class="auth-form">
+        <h2>Doctor Login</h2>
+        <form id="doctorLoginForm">
+            <div class="form-group">
+                <label for="doctorEmail">Email</label>
+                <input type="email" id="doctorEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="doctorPassword">Password</label>
+                <input type="password" id="doctorPassword" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <p><a href="index.html">Back to Home</a></p>
+    </div>
+</main>
+
+<script src="js/auth.js"></script>
+<script>
+    document.getElementById('doctorLoginForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('doctorEmail').value;
+      const password = document.getElementById('doctorPassword').value;
+      login(email, password, 'doctor', 'doctor-dashboard.html');
+    });
+</script>
+</body>
+</html>

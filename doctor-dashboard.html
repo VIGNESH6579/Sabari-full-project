@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard | MediCare</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="assets/logo.png" alt="Hospital Logo">
+            <h1>MediCare Hospital</h1>
+        </a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="patient-login.html">Patient Portal</a></li>
+            <li><a href="doctor-login.html" class="active">Doctor Portal</a></li>
+            <li><a href="admin-login.html">Admin Portal</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="dashboard">
+    <aside class="sidebar">
+        <div class="user-profile">
+            <img src="assets/doctor-avatar.png" alt="Doctor Avatar">
+            <h3 id="doctorName">Doctor</h3>
+            <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active"><i class="fas fa-calendar-alt"></i> Appointments</a></li>
+                <li><a href="#"><i class="fas fa-users"></i> Patients</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <section class="dashboard-content">
+        <div class="cards">
+            <div class="card">
+                <h3>Today's Appointments</h3>
+                <div id="doctorAppointments" class="appointments-list">
+                    <!-- Appointments will be dynamically loaded here -->
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Patient List</h3>
+                <div id="patientList" class="patient-list">
+                    <!-- Patients will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Appointment Details Modal -->
+<div id="appointmentModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Appointment Details</h2>
+        <div class="detail-row">
+            <span class="detail-label">Patient:</span>
+            <span class="detail-value" id="modalPatientName"></span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Date:</span>
+            <span class="detail-value" id="modalAppointmentDate"></span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Time:</span>
+            <span class="detail-value" id="modalAppointmentTime"></span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Reason:</span>
+            <span class="detail-value" id="modalAppointmentReason"></span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Status:</span>
+            <span class="detail-value" id="modalAppointmentStatus"></span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Notes:</span>
+            <textarea id="modalAppointmentNotes"></textarea>
+        </div>
+        <button id="saveNotesBtn" class="btn">Save Notes</button>
+    </div>
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/doctor.js"></script>
+</body>
+</html>

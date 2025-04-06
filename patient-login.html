@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Login | MediCare</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="assets/logo.png" alt="Hospital Logo">
+            <h1>MediCare Hospital</h1>
+        </a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="patient-login.html" class="active">Patient Portal</a></li>
+            <li><a href="doctor-login.html">Doctor Portal</a></li>
+            <li><a href="admin-login.html">Admin Portal</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="auth-container">
+    <div class="auth-form">
+        <h2>Patient Login</h2>
+        <form id="patientLoginForm">
+            <div class="form-group">
+                <label for="patientEmail">Email</label>
+                <input type="email" id="patientEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="patientPassword">Password</label>
+                <input type="password" id="patientPassword" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <p>Don't have an account? <a href="patient-register.html">Register here</a></p>
+        <p><a href="index.html">Back to Home</a></p>
+    </div>
+</main>
+
+<script src="js/auth.js"></script>
+<script>
+    document.getElementById('patientLoginForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('patientEmail').value;
+      const password = document.getElementById('patientPassword').value;
+      login(email, password, 'patient', 'patient-dashboard.html');
+    });
+</script>
+</body>
+</html>
